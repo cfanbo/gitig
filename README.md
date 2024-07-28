@@ -45,7 +45,7 @@ target/release/gitig -v # 查看版本号
 
 ### 添加忽略条目
 
-使用 `gitig add <TYPE>` 命令，将指定类型的常用忽略条目添加到当前工作目录的 .gitignore 文件中。
+使用 `gitig add <TYPE>` 命令，将指定类型的常用忽略条目添加到当前工作目录的 `.gitignore` 文件中。
 
 ```shell
 gitig add Rust
