@@ -30,15 +30,8 @@ impl Core {
         let mut lines = self.fetch_new_records(files);
         if lines.len() > 0 {
             // 检查原文件内容是否为空
-            let mut file_is_empty = false;
             let fpath = Path::new(".gitignore");
-            let file_content = helper::read_file_contents(&fpath).unwrap_or_else(|_| {
-                file_is_empty = true;
-                String::new()
-            });
-            if !file_is_empty && file_content.len() == 0 {
-                file_is_empty = true;
-            }
+            let file_size = helper::get_file_size(&fpath);
 
             // 追加忽略项
             let mut file = fs::OpenOptions::new()
@@ -46,7 +39,8 @@ impl Core {
                 .create(true)
                 .open(".gitignore")?;
 
-            if !file_is_empty {
+            // 文件不为空，添加空行
+            if file_size > 0 {
                 file.write_all("\n".as_bytes())?;
             }
             lines.sort();
