@@ -35,8 +35,8 @@ chmod +x /usr/local/bin/gitig
 git clone https://github.com/github/gitignore gitignore-repo
 git clone https://github.com/cfanbo/gitig.git
 cd gitig
-cargo build --release # 编译程序
-target/release/gitig -v # 查看版本号
+cargo install --path . # 将自动安装到 ~/.cargo/bin/ 目录
+gitig -v # 查看版本号
 ```
 
 
