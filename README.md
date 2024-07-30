@@ -17,19 +17,32 @@
 
 ## 安装
 
-`gitig` 的预编译二进制文件档案可用于 Windows、macOS 和 Linux。
+### 手动下载安装
 
-直接从 https://github.com/cfanbo/gitig/releases 下载相对应的软件包解压即可，以 Linux 为例
+下载安装包，然后解压缩安装程序。您可以将提取的 `gitig` 可执行文件移动到 `/usr/local/bin` 目录或将其添加到 `$PATH`。
+
+下载地址:
+
+- [MacOS x86_64](https://githubfiles.oss-cn-shanghai.aliyuncs.com/gitig/gitig-x86_64-apple-darwin.tar.gz)
+- [MacOS aarch64](https://githubfiles.oss-cn-shanghai.aliyuncs.com/gitig/gitig-aarch64-apple-darwin.tar.gz)
+- [Linux x86_64](https://githubfiles.oss-cn-shanghai.aliyuncs.com/gitig/gitig-x86_64-unknown-linux-gnu.tar.gz)
+- [Linux aarch64](https://githubfiles.oss-cn-shanghai.aliyuncs.com/gitig/gitig-aarch64-unknown-linux-gnu.tar.gz)
+- [Windows x86_64](https://githubfiles.oss-cn-shanghai.aliyuncs.com/gitig/gitig-x86_64-pc-windows-msvc.zip)
+- [Windows aarch64](https://githubfiles.oss-cn-shanghai.aliyuncs.com/gitig/gitig-aarch64-pc-windows-msvc.zip)
+
+所有发布版本请[点击这里](https://github.com/cfanbo/gitig/releases)
+
+### shell 脚本安装
+
+您可以在macOS终端或Linux shell提示符中粘贴以下命令并执行，注意权限问题。
 
 ```shell
-tar zxvf gitig-x86_64-unknown-linux-gnu.tar.gz
-mv gitig /usr/local/bin/
-chmod +x /usr/local/bin/gitig
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/gitig/gitig/HEAD/install.sh)"
 ```
 
+### 编译安装
 
-
-另外也可以选择在本地进行编译安装，不过由于程序依赖于 [github.com/github/gitignore](github.com/github/gitignore) 项目，需要将其 clone 到本地，并将其与当前项目放在同一个目录，保持两个项目目录同级关系。
+如果您是Rust开发者，另外也可以选择在本地进行编译安装。不过由于程序依赖于 [github.com/github/gitignore](github.com/github/gitignore) 项目，需要将其 `clone` 到本地，并将其与当前项目放在同一个目录，保持两个项目目录同级关系。
 
 ```shell
 git clone https://github.com/github/gitignore gitignore-repo
