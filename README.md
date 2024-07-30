@@ -37,7 +37,7 @@
 您可以在macOS终端或Linux shell提示符中粘贴以下命令并执行，注意权限问题。
 
 ```shell
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/gitig/gitig/HEAD/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/cfanbo/gitig/HEAD/install.sh)"
 ```
 
 ### 编译安装
