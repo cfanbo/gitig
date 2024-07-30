@@ -42,7 +42,7 @@
 
 ### 编译安装
 
-如果您是Rust开发者，另外也可以选择在本地进行编译安装。不过由于程序依赖于 [github.com/github/gitignore](github.com/github/gitignore) 项目，需要将其 `clone` 到本地，并将其与当前项目放在同一个目录，保持两个项目目录同级关系。
+如果您是Rust开发者，也可以选择在本地进行编译安装。不过由于程序依赖于 [github.com/github/gitignore](github.com/github/gitignore) 项目，需要将其 `clone` 到本地，并将其与当前项目放在同一个目录，保持两个项目目录同级关系。
 
 ```shell
 git clone https://github.com/github/gitignore gitignore-repo
