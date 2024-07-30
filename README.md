@@ -42,6 +42,8 @@
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/cfanbo/gitig/HEAD/install.sh)"
 ```
 
+如果您使用的是 `zsh`的话，命令行前面更改为 `/bin/zsh`即可。
+
 ### 编译安装
 
 如果您是Rust开发者，也可以选择在本地进行编译安装。不过由于程序依赖于 [github.com/github/gitignore](github.com/github/gitignore) 项目，需要将其 `clone` 到本地，并将其与当前项目放在同一个目录，保持两个项目目录同级关系。
