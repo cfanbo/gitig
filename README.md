@@ -1,5 +1,7 @@
 # gitig
 
+![gitig](./docs/image/logo.png)
+
 `gitig(nore)` 是一款帮助开发者将项目中常见的不需要版本控制的文件和目录添加到本地 `.gitignore` 文件的工具。它的主要数据来源自 https://github.com/github/gitignore 仓库，该仓库提供了一系列有用的 `.gitignore` 模板。
 
 
