@@ -19,7 +19,7 @@
 
 ### 手动下载安装
 
-下载安装包，然后解压缩安装程序。您可以将提取的 `gitig` 可执行文件移动到 `/usr/local/bin` 目录或将其添加到 `$PATH`。
+下载并解压安装包，将 `gitig` 可执行文件移动到 `/usr/local/bin/` 目录或将其添加到 `$PATH` 环境变量。
 
 下载地址:
 
@@ -61,7 +61,7 @@ gitig -v # 查看版本号
 使用 `gitig add <TYPE>` 命令，将指定类型的常用忽略条目添加到当前工作目录的 `.gitignore` 文件中。
 
 ```shell
-gitig add Rust
+$ gitig add Rust
 ```
 
 上面命令将 rust 项目推荐的 `.gitignore`忽略条目添加到本地 `.gitignore` 文件。
@@ -69,7 +69,7 @@ gitig add Rust
 也可以一次指定多个类型，如：
 
 ```shell
-gitig add python java rust
+$ gitig add python java rust
 ```
 
 ### 查看支持的项目类型
@@ -77,7 +77,7 @@ gitig add python java rust
 使用 `gitig list` 命令，查看当前支持的所有项目类型。
 
 ```shell
-gitig list
+$ gitig list
 ```
 
 ### 搜索相关项目类型
@@ -85,7 +85,8 @@ gitig list
 使用 `gitig search <keywords>` 命令，通过关键词查询相关的项目类型。
 
 ```shell
-gitig search ja
+$ gitig search ja
+$ gitig search visual
 ```
 
 ### 查看忽略条目清单
@@ -93,7 +94,7 @@ gitig search ja
 使用 `gitig show <TYPE>` 命令，查看指定项目类型的忽略清单。
 
 ```shell
-gitig show Python
+$ gitig show Python
 ```
 
 
