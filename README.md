@@ -26,12 +26,12 @@
 
 下载地址:
 
-- [MacOS x86_64](https://githubfiles.oss-cn-shanghai.aliyuncs.com/gitig/gitig-x86_64-apple-darwin.tar.gz)
-- [MacOS aarch64](https://githubfiles.oss-cn-shanghai.aliyuncs.com/gitig/gitig-aarch64-apple-darwin.tar.gz)
-- [Linux x86_64](https://githubfiles.oss-cn-shanghai.aliyuncs.com/gitig/gitig-x86_64-unknown-linux-gnu.tar.gz)
-- [Linux aarch64](https://githubfiles.oss-cn-shanghai.aliyuncs.com/gitig/gitig-aarch64-unknown-linux-gnu.tar.gz)
-- [Windows x86_64](https://githubfiles.oss-cn-shanghai.aliyuncs.com/gitig/gitig-x86_64-pc-windows-msvc.zip)
-- [Windows aarch64](https://githubfiles.oss-cn-shanghai.aliyuncs.com/gitig/gitig-aarch64-pc-windows-msvc.zip)
+- [MacOS x86_64](https://githubfiles.oss-cn-shanghai.aliyuncs.com/gitig/gitig-latest-x86_64-apple-darwin.tar.gz)
+- [MacOS aarch64](https://githubfiles.oss-cn-shanghai.aliyuncs.com/gitig/gitig-latest-aarch64-apple-darwin.tar.gz)
+- [Linux x86_64](https://githubfiles.oss-cn-shanghai.aliyuncs.com/gitig/gitig-latest-x86_64-unknown-linux-gnu.tar.gz)
+- [Linux aarch64](https://githubfiles.oss-cn-shanghai.aliyuncs.com/gitig/gitig-latest-aarch64-unknown-linux-gnu.tar.gz)
+- [Windows x86_64](https://githubfiles.oss-cn-shanghai.aliyuncs.com/gitig/gitig-latest-x86_64-pc-windows-msvc.zip)
+- [Windows aarch64](https://githubfiles.oss-cn-shanghai.aliyuncs.com/gitig/gitig-latest-aarch64-pc-windows-msvc.zip)
 
 所有发布版本请[点击这里](https://github.com/cfanbo/gitig/releases)
 
