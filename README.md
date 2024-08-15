@@ -79,7 +79,7 @@ $ gitig add python java rust
 
 您也可以手动添加本地文件或目录项
 
-```
+```shell
 $ gitig local .zed/ .vscode/ .output/
 ```
 
