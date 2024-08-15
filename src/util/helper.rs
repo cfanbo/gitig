@@ -2,9 +2,16 @@ use colored::*;
 use serde_json;
 use std::collections::HashMap;
 use std::fs;
+use std::fs::File;
 use std::io::{self, Read};
 use std::path::Path;
 
+pub fn get_file() -> io::Result<File> {
+    fs::OpenOptions::new()
+        .append(true)
+        .create(true)
+        .open(".gitignore")
+}
 pub fn read_file_contents(path: &Path) -> io::Result<String> {
     let mut file = fs::File::open(path)?;
     let mut contents = String::new();

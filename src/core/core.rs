@@ -1,6 +1,5 @@
 use crate::util::helper;
 use std::collections::{HashMap, HashSet};
-use std::fs::{self};
 use std::io::Write;
 use std::io::{self};
 use std::path::Path;
@@ -34,10 +33,7 @@ impl Core {
             let file_size = helper::get_file_size(&fpath);
 
             // 追加忽略项
-            let mut file = fs::OpenOptions::new()
-                .append(true)
-                .create(true)
-                .open(".gitignore")?;
+            let mut file = helper::get_file()?;
 
             // 文件不为空，添加空行
             if file_size > 0 {
@@ -132,5 +128,25 @@ impl Core {
             self.files
                 .insert(file_name.to_lowercase(), content.to_string());
         }
+    }
+
+    pub fn append(&mut self, lines: Vec<String>) -> io::Result<Vec<String>> {
+        // 检查本地文件是否存在该项
+        let mut new_records: Vec<String> = vec![];
+        for record in lines {
+            if !self.db.contains(&record) {
+                new_records.push(record.clone());
+            }
+        }
+
+        if new_records.len() > 0 {
+            new_records.sort();
+
+            let mut file = helper::get_file()?;
+            file.write_all("\n".as_bytes())?;
+            file.write_all(new_records.join("\n").as_bytes())?;
+        }
+
+        Ok(new_records)
     }
 }

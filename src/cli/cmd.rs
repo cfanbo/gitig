@@ -1,51 +1,63 @@
 use crate::core::core;
 use crate::util::helper;
 use log::debug;
+use std::collections::HashSet;
 
 pub struct Help;
+
 impl Help {
     pub fn default() -> String {
         "Examples:
-    
+
     # 将 rust 和 java 项目推荐的 gitignore 条目添加到本地 .gitignore 文件
         gitig add rust
         gitig add java
-    
+
     # 查看 rust 项目推荐的 gitignore 项清单
         gitig show rust
-    
+
     # 查看当前支持的所有项目类型清单
         gitig list
-    
+
     # 搜索支持的项目类型
-        gitig search ja    
-    
+        gitig search ja
+
     "
         .to_string()
     }
 
     pub fn add() -> String {
         "Examples:
-    
+
     # 将 rust 项目推荐的 gitignore 条目添加到本地 .gitignore 文件
         gitig add rust
-    
+
     # 一次性添加多类型项目
         gitig add rust java
-    
-    
+
+    "
+        .to_string()
+    }
+
+    pub fn file() -> String {
+        "Examples:
+
+    # 将本地文件添加到 .gitignore 文件
+        gitig file .DS_Store
+        gitig file .zed/ .vscode/ .output/
+
     "
         .to_string()
     }
 
     pub fn search() -> String {
         "Examples:
-    
+
     # 搜索支持的项目类型, 完整匹配
-        gitig search java    
+        gitig search java
 
     # 搜索支持的项目类型, 关键字搜索
-        gitig search ja 
+        gitig search ja
 
     "
         .to_string()
@@ -81,6 +93,22 @@ pub fn add(files: Vec<String>) {
     }
 }
 
+pub fn local(items: Vec<String>) {
+    let mut core = core::Core::new();
+    let items = remove_duplicates(items);
+    match core.append(items) {
+        Ok(items) => {
+            for item in &items {
+                println!("{}", item);
+            }
+            println!("\n本次成功更新 {} 个忽略条目\n", items.len());
+        }
+        Err(e) => {
+            debug!("Failed to update .gitignore: {e}");
+        }
+    };
+}
+
 pub fn show(files: Vec<String>) {
     let core = core::Core::new();
     let mut sorted_items = core.get_lines_by_files(files);
@@ -106,4 +134,18 @@ pub fn list() {
 
 pub fn version() {
     println!("{}", helper::get_version());
+}
+
+pub fn remove_duplicates(vec: Vec<String>) -> Vec<String> {
+    let mut set = HashSet::new();
+    let mut unique_vec = Vec::new();
+
+    for item in vec {
+        // 插入到 HashSet 中，如果成功插入，则是新元素
+        if set.insert(item.clone()) {
+            unique_vec.push(item);
+        }
+    }
+
+    unique_vec
 }

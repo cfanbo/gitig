@@ -19,6 +19,17 @@ pub fn run() {
             let typs: Vec<String> = types.iter().map(|s| s.to_lowercase()).collect::<Vec<_>>();
             cmd::add(typs);
         }
+        Some(("local", sub_matches)) => {
+            let types = sub_matches
+                .get_many::<String>("FILE")
+                .into_iter()
+                .flatten()
+                .collect::<Vec<_>>();
+            info!("Adding {types:?}");
+
+            let typs: Vec<String> = types.iter().map(|s| s.to_lowercase()).collect::<Vec<_>>();
+            cmd::local(typs);
+        }
         Some(("show", sub_matches)) => {
             let types = sub_matches
                 .get_many::<String>("TYPE")
@@ -73,6 +84,19 @@ fn cli() -> Command {
                         .required(true)
                         .num_args(1..), // 允许一个或多个参数
                 ), // .arg(arg!(<TYPE> "项目类型, 如 Go、Java、Rust 等, 不区分大小写")),
+        )
+        .subcommand(
+            Command::new("local")
+                .about("手动添加本地文件或目录条目")
+                .arg_required_else_help(true)
+                .after_help(Help::file())
+                .short_flag('l')
+                .arg(
+                    Arg::new("FILE")
+                        .help("忽略项，多个之间以空格隔开")
+                        .required(true)
+                        .num_args(1..), // 允许一个或多个参数
+                ),
         )
         .subcommand(Command::new("list").about("列出所有支持的类型"))
         .subcommand(
