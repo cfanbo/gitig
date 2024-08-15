@@ -39,12 +39,12 @@ impl Help {
         .to_string()
     }
 
-    pub fn file() -> String {
+    pub fn local() -> String {
         "Examples:
 
     # 将本地文件添加到 .gitignore 文件
-        gitig file .DS_Store
-        gitig file .zed/ .vscode/ .output/
+        gitig local .DS_Store
+        gitig local .zed/ .vscode/ .output/
 
     "
         .to_string()

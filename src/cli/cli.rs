@@ -89,7 +89,7 @@ fn cli() -> Command {
             Command::new("local")
                 .about("手动添加本地文件或目录条目")
                 .arg_required_else_help(true)
-                .after_help(Help::file())
+                .after_help(Help::local())
                 .short_flag('l')
                 .arg(
                     Arg::new("FILE")

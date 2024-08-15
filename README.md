@@ -9,6 +9,7 @@
 ## 功能列表
 
 - `gitig add <TYPE>`：将指定类型 `<TYPE>` 的忽略条目写入本地 `.gitignore` 文件中
+- `gitig local <FILE>` 手动添加忽略项
 - `gitig list`：查看当前支持的所有项目类型
 - `gitig search <keywords>`：根据关键字搜索相关类型
 - `gitig show <TYPE>`：查看指定项目类型 `<TYPE>` 的忽略清单
@@ -75,6 +76,14 @@ $ gitig add Rust
 ```shell
 $ gitig add python java rust
 ```
+
+您也可以手动添加本地文件或目录项
+
+```
+$ gitig local .zed/ .vscode/ .output/
+```
+
+
 
 ### 查看支持的项目类型
 
