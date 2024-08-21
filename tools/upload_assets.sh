@@ -2,6 +2,8 @@
 
 VERSION=$1
 
+#REPO
+REPO="cfanbo/gitig"
 # softname
 NAME="gitig"
 
@@ -21,7 +23,7 @@ for filename in "${LIST[@]}"
 do
     curl -fsSL -O \
         -H "Authorization: Bearer $GITHUB_TOKEN" \
-        https://github.com/cfanbo/ghactions/releases/download/v"$VERSION"/"$filename"
+        https://github.com/"$REPO"/releases/download/v"$VERSION"/"$filename"
     shasum -a 256 "$filename" >> SHASUMS256.txt
 done
 
