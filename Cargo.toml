@@ -11,6 +11,14 @@ env_logger = "0.11.4"
 serde_json = "1.0.120"
 serde = { version = "1.0", features = ["derive"] }
 colored = "2.1.0"
+self_update = { version = "0.42.0", features = [
+    "rustls",
+    "archive-tar",
+    "archive-zip",
+    "compression-flate2",
+    "compression-zip-deflate",
+    "compression-zip-bzip2",
+] }
 
 [build-dependencies]
 serde_json = "1.0.120"

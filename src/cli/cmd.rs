@@ -1,5 +1,6 @@
 use crate::core::core;
 use crate::util::helper;
+use crate::updater;
 use log::debug;
 use std::collections::HashSet;
 
@@ -134,6 +135,20 @@ pub fn list() {
 
 pub fn version() {
     println!("{}", helper::get_version());
+}
+
+pub fn update() {
+    let updater = updater::create_updater();
+    
+    match updater.update() {
+        Ok(()) => {
+            // 更新成功或已是最新版本
+        }
+        Err(e) => {
+            eprintln!("更新失败: {}", e);
+            debug!("Update error: {}", e);
+        }
+    }
 }
 
 pub fn remove_duplicates(vec: Vec<String>) -> Vec<String> {

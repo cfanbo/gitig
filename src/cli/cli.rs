@@ -53,6 +53,9 @@ pub fn run() {
         Some(("version", _sub_matches)) => {
             cmd::version();
         }
+        Some(("update", _sub_matches)) => {
+            cmd::update();
+        }
         Some((ext, sub_matches)) => {
             let args = sub_matches
                 .get_many::<OsString>("")
@@ -113,4 +116,5 @@ fn cli() -> Command {
                 .arg(arg!(<TYPE> "以关键字搜索项目类型, 不区分大小写")),
         )
         .subcommand(Command::new("version").short_flag('v').about("查看版本号"))
+        .subcommand(Command::new("update").about("检查并更新到最新版本"))
 }
